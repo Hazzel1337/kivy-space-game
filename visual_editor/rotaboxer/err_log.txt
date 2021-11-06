@@ -1,0 +1,735 @@
+
+Crash@2021-11-04 17:28:06
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:28:27
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:28:41
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:37:51
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:38:38
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 186, in on_size
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:44:53
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:50:05
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 17:50:57
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 705, in kivy._event.EventDispatcher.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1172, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 244, in drag
+    self.pivot = self.root.scat.to_widget(*args[2].pos)
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1364, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 1525, in kivy.properties.AliasProperty.set
+  File "kivy\properties.pyx", line 1527, in kivy.properties.AliasProperty.set
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 101, in set_pivot_x
+    self.x = value - self.width * self.pivot_bond[0]
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 18:33:06
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 18:33:14
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-04 18:35:04
+Traceback (most recent call last):
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-06 16:33:23
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-06 16:35:00
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-06 16:39:18
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2959, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 1289, in on_touch_down
+    self.add_point(*pos)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 422, in add_point
+    text=str(0))]
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 173, in __init__
+    self.size = mag * 6, mag * 6
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 1372, in kivy.properties.ReferenceListProperty.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 184, in on_size
+    self.x -= self.size[0] * .5
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 545, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "kivy\properties.pyx", line 1319, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 1334, in kivy.properties.ReferenceListProperty.trigger_change
+  File "kivy\properties.pyx", line 600, in kivy.properties.Property.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1154, in kivy._event.EventObservers._dispatch
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 190, in on_pos
+    self.label.color = self.adjust_color(self.right, self.top)
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 272, in adjust_color
+    back = image._coreimage.read_pixel(x, image.height - y - 1)
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
+    raise EOFError('Image data is missing, make sure that image is'
+EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
