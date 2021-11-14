@@ -19,7 +19,7 @@ class Pipe(Widget):
     top_pipe_tex_coords = ListProperty((0, 0, 1, 0, 1, 1, 0, 1))
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+        super(Pipe, self).__init__(**kwargs)
         self.pipe_body_texture = Image(source="pipe_body.png").texture
         self.pipe_body_texture.wrap = 'repeat'
 

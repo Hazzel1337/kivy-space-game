@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="616daa74-66c6-4e61-b812-69913ba5428a" name="Default Changelist" comment="" />
+    <list default="true" id="616daa74-66c6-4e61-b812-69913ba5428a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset_atlas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_backup.kv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_backup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_comments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.kv" beforeDir="false" afterPath="$PROJECT_DIR$/main.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotabox.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotabox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visual_editor/rotaboxer.py" beforeDir="false" afterPath="$PROJECT_DIR$/visual_editor/rotaboxer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visual_editor/rotaboxer/Ship1.bounds" beforeDir="false" afterPath="$PROJECT_DIR$/visual_editor/rotaboxer/Ship1.bounds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visual_editor/rotaboxer/err_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/visual_editor/rotaboxer/err_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visual_editor/rotaboxer/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/visual_editor/rotaboxer/settings.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1zmbd8s4jQQ6grb2gZ5J3G7oHl3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\downloads\kivy-flappybird\roation" />
+      <recent name="F:\downloads\kivy-flappybird" />
       <recent name="F:\downloads\kivy-flappybird\visual_editor" />
       <recent name="F:\downloads\kivy-flappybird\visual_editor\rotaboxer" />
     </key>
@@ -31,6 +60,48 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="imagetransformopencv (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kivy-flappybird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/roation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roation/imagetransformopencv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="imagetransformopencv" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kivy-flappybird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="F:\downloads\kivy-flappybird\roation\imagetransformopencv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="kivy-flappybird" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,27 +144,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rotaboxer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="kivy-flappybird" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/visual_editor/rotaboxer" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="rotaboxer (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="kivy-flappybird" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,34 +165,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rotaboxer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="kivy-flappybird" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/visual_editor" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\downloads\kivy-flappybird\visual_editor\rotaboxer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.rotaboxer (2)" />
-        <item itemvalue="Python.rotaboxer (1)" />
         <item itemvalue="Python.rotabox" />
-        <item itemvalue="Python.rotaboxer" />
+        <item itemvalue="Python.imagetransformopencv (1)" />
+        <item itemvalue="Python.imagetransformopencv" />
       </list>
     </recent_temporary>
   </component>
@@ -158,5 +187,29 @@
       <updated>1634756294718</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/roation/imagetransformopencv.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -293,11 +293,13 @@ from kivy.properties import (NumericProperty, ReferenceListProperty,
                              ListProperty, BoundedNumericProperty, partial)
 from math import radians, sin, cos
 import json, sys
+from future.utils import iteritems, itervalues
 
 if sys.version_info < (3, 0):  # Python 2.x
     from codecs import open
     range = xrange
-from future.utils import iteritems, itervalues
+
+
 
 try:
     from cybounds import define_bounds, resize, aniresize, get_peers, \

@@ -49,6 +49,13 @@ FloatLayout:
             self.disabled = True
             self.opacity = 0
             app.start_game()
+    Bird:
+        source: "bird1.png"
+        size_hint: None, None
+        size: 46, 34
+        pos: 20, (root.height - 96) / 2.0
+        id: bird
+
     Ship:
         #source: "Ship1.png"
         #size_hint: None, None
@@ -75,6 +82,8 @@ FloatLayout:
         Button:
             id: button5
             text: "5"
+            #disabled: True
+            on_press: ship.rotate()
         Button:
             text: "6"
             on_state: ship.move_right(self)
@@ -87,3 +96,9 @@ FloatLayout:
         Button:
             text: "9"
             on_state: ship.move_downright(self)
+
+
+
+
+
+

@@ -733,3 +733,57 @@ Traceback (most recent call last):
   File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\core\image\__init__.py", line 942, in read_pixel
     raise EOFError('Image data is missing, make sure that image is'
 EOFError: Image data is missing, make sure that image isloaded with keep_data=True keyword.
+
+Crash@2021-11-10 17:11:27
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2966, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 308, in post_dispatch_input
+    wid.dispatch('on_touch_up', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\uix\behaviors\button.py", line 179, in on_touch_up
+    self.dispatch('on_release')
+  File "kivy\_event.pyx", line 705, in kivy._event.EventDispatcher.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1132, in kivy._event.EventObservers._dispatch
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\lang\builder.py", line 57, in custom_callback
+    exec(__kvlang__.co_value, idmap)
+  File "F:\downloads\kivy-flappybird\visual_editor\rotaboxer\rotaboxer.kv", line 553, in <module>
+    on_release: if not busy.opacity: root.accept_points()
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2656, in accept_points
+    color=polygon['color'][:-1] + (.3,))
+TypeError: can only concatenate list (not "tuple") to list
+
+Crash@2021-11-10 17:47:15
+Traceback (most recent call last):
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 2966, in <module>
+    Rotaboxer().run()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\base.py", line 387, in idle
+    Clock.tick()
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\clock.py", line 733, in tick
+    self.post_idle(ts, self.idle())
+  File "C:\Users\hazzzel\AppData\Local\Programs\Python\Python37-32\lib\site-packages\kivy\clock.py", line 776, in post_idle
+    self._process_events()
+  File "kivy\_clock.pyx", line 616, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 645, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
+  File "F:/downloads/kivy-flappybird/visual_editor/rotaboxer.py", line 724, in build_state
+    pol = self.rec[self.frame][entry[0]]
+KeyError: None
