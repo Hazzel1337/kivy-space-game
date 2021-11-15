@@ -23,7 +23,7 @@ from rotabox import Rotabox
 
 
 
-from pipe import Pipe
+
 
 
 
@@ -59,7 +59,7 @@ class Projectile(Rotabox):
         self.animcounter = 0
         self.type = type
         self.add_widget(Image(source=ships_atlas[type]["shots"][0]))
-        print(ships_atlas[type]["shots-bounds"][0])
+        #print(ships_atlas[type]["shots-bounds"][0])
 
 
 
@@ -87,21 +87,23 @@ class Projectile(Rotabox):
         self.travel_vec = spitze - fuss
 
     def move_me(self):
-        self.pos = Vector(self.pos) + self.travel_vec.normalize()
-        self.already_travled += self.travel_vec.normalize()
-        if abs(self.already_travled.x) >= abs(self.travel_vec.normalize().x * 300) and abs(self.already_travled.y) >= abs(self.travel_vec.normalize().y * 300):
-
-            if self.parent:
-                self.parent.ids["ship"].projectile_list.remove(self)
-                self.parent.remove_widget(self)
+        if self.parent:
+            self.pos = Vector(self.pos) + self.travel_vec.normalize()
+            self.already_travled += self.travel_vec.normalize()
+        # if abs(self.already_travled.x) >= abs(self.travel_vec.normalize().x * 300) and abs(self.already_travled.y) >= abs(self.travel_vec.normalize().y * 300):
+        #
+        #     if self.parent:
+        #         self.parent.projectile_list.remove(self)
+        #         self.parent.remove_widget(self)
 
 
     def animate_ontime(self, time_passed):
 
-        if self.animcounter < len(ships_atlas[self.type]["shots"]) - 1:
-            self.animcounter += 1
-            self.children[0].source = ships_atlas[self.type]["shots"][self.animcounter]
-            self.custom_bounds = [ships_atlas[self.type]["shots-bounds"][self.animcounter]]
+        if self.parent:
+            if self.animcounter < len(ships_atlas[self.type]["shots"]) - 1:
+                self.animcounter += 1
+                self.children[0].source = ships_atlas[self.type]["shots"][self.animcounter]
+                self.custom_bounds = [ships_atlas[self.type]["shots-bounds"][self.animcounter]]
 
 
 
@@ -180,13 +182,13 @@ class Background(Widget):
 
     def make_bg(self):
 
-
         bg_l = []
 
         for w in range(int(Window.width / self.bg0.size[0]) + 2):
             for h in range(int(Window.height / self.bg0.size[1]) + 2):
                 bg_l.append(Rectangle(pos=(0 - self.bg0.size[0] + (w * 200), 0 - self.bg0.size[1] + (h * 200)), size=(200, 200), texture=self.bg0))
                 self.bg_list_defaultpos.append((0 - self.bg0.size[0] + (w * 200), 0 - self.bg0.size[1] + (h * 200)))
+
         return bg_l
 
 
@@ -263,11 +265,6 @@ class Ship(Image):
     def __init__(self, **kwargs):
         super(Ship, self).__init__(**kwargs)
 
-        self.p1 = (self.pos[0] + 2, self.pos[1] + 16)
-        self.p2 = (self.pos[0] + 60, self.pos[1] + 16)
-        self.p3 = (self.pos[0] + 60, self.pos[1] + 44)
-        self.p4 = (self.pos[0] + 2, self.pos[1] + 44)
-
 
         self.source = "Ship1.png"
         self.allow_stretch = True
@@ -280,12 +277,10 @@ class Ship(Image):
     def on_touch_down(self, touch):
 
         if len(self.projectile_list) < 100:
-            self.projectile_list.append(Projectile(self.center, touch.pos, 5))
+            self.projectile_list.append(Projectile(self.center, touch.pos, 6))
             self.parent.add_widget(self.projectile_list[-1])
 
             Clock.schedule_interval(self.projectile_list[-1].animate_ontime, 0.2)
-
-
 
         self.source = "Ship1.png"
         self.velocity = 150
@@ -388,12 +383,17 @@ class Ship2(Rotabox):
         self.travel_vec = Vector(self.new_destination()) - Vector(self.pos)
         self.already_travled = Vector(0,0)
 
+        self.shooting_sheduled = False
 
-    def shoot_target(self, targetpos):
-        self.projectile_list.append(Projectile(self.center, targetpos, self.type))
-        self.parent.add_widget(self.projectile_list[-1])
-        Clock.schedule_interval(self.projectile_list[-1].animate_ontime, 0.5)
 
+    def shoot_target(self, targetpos, list_):
+        if self.parent:
+            # self.projectile_list.append(Projectile(self.center, targetpos, self.type))
+            # self.parent.add_widget(self.projectile_list[-1])
+            # Clock.schedule_interval(self.projectile_list[-1].animate_ontime, 0.5)
+            list_.append(Projectile(self.center, targetpos, self.type))
+            self.parent.add_widget(list_[-1])
+            Clock.schedule_interval(list_[-1].animate_ontime, 0.5)
 
     def move_me(self, offset):
         self.original_pos = Vector(self.original_pos) + self.travel_vec.normalize()
@@ -406,7 +406,6 @@ class Ship2(Rotabox):
             #     self.parent.ids["ship"].projectile_list.remove(self)
             #     self.parent.remove_widget(self)
 
-
         self.pos = Vector(self.original_pos) - offset
 
     def new_destination(self):
@@ -414,6 +413,9 @@ class Ship2(Rotabox):
         x = randint(Window.width, Window.width * 2)
         y = randint(0, Window.height)
         return Vector(x, y)
+
+    def toggle_shotting(self):
+        self.shooting_sheduled = False
 
 
 
@@ -454,6 +456,10 @@ class MainApp(App):
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
         self.offset = Vector(0, 0)
+        self.team1 = []
+        self.team1_projectiles = []
+        self.team2 = []
+        self.team2_projectiles = []
 
 
 
@@ -488,7 +494,7 @@ class MainApp(App):
 
 
     def next_frame(self, time_passed):
-        self.move_pipes(time_passed)
+        #self.move_pipes(time_passed)
         #self.root.ids.background.scroll_textures(time_passed)
         self.ship_moveme()
 
@@ -496,31 +502,196 @@ class MainApp(App):
         #print(self.npc_test.pos, self.npc_test.original_pos)
         #print(Vector(self.root.ids.ship.pos).distance(Vector(self.npc_test.pos)),self.offset)
 
+        #performance test
+        # if len(self.team1) < 10:
+        #     self.team1.append(Ship2((0, Window.height * 0.7), randint(1, 3)))
+        #     self.root.add_widget(self.team1[-1])
+        #
+        # if len(self.team2) < 10:
+        #     self.team2.append(Ship2((0, Window.height * 0.3), randint(4, 6))) #Window.width * 1
+        #     self.root.add_widget(self.team2[-1])
+        if len(self.team1) < 10:
+            self.team1.append(Ship2((Window.width * 1, Window.height * 0.7), 2))
+            self.root.add_widget(self.team1[-1])
+            print("added")
 
-        for p in self.root.ids.ship.projectile_list:
-            p.move_me()
-
-            if p.collide_widget(self.npc_test):
-                print("au au au")
-
-            if p.collide_widget(self.root.ids.ship):
-
-                with self.root.ids.background.canvas:
-                    Color(1, 0, 0, 1, mode='rgba')
-
-
-            with self.root.ids.background.canvas:
-                Color(1, 0, 0, 1, mode='rgba')
-                Line(pos=self.root.ids.ship.p1, points=(self.root.ids.ship.p1,self.root.ids.ship.p2,self.root.ids.ship.p3,self.root.ids.ship.p4,self.root.ids.ship.p1), width=1)
-
-                Rectangle(pos=self.root.ids.ship.pos, size=self.root.ids.ship.size)
-
-
-            self.root.ids.background.canvas.ask_update()
+        if len(self.team2) < 10:
+            self.team2.append(Ship2((Window.width * 1, Window.height * 0.3), 6)) #Window.width * 1
+            self.root.add_widget(self.team2[-1])
 
 
 
+        # for ship1, ship2 in zip(self.team1.copy(), self.team2.copy()):
+        #     ship1.move_me(self.offset)
+        #     ship2.move_me(self.offset)
+        #
+        #
+        #     if not ship1.shooting_sheduled:
+        #         tar1 = random.choice(self.team2)
+        #         Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos), 10)
+        #         ship1.shooting_sheduled = True
+        #
+        #     if not ship2.shooting_sheduled:
+        #         tar2 = random.choice(self.team1)
+        #         Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos), 10)
+        #         ship2.shooting_sheduled = True
 
+            # for p1, p2 in zip(ship1.projectile_list.copy(), ship2.projectile_list.copy()):
+            #
+            #     if p1 in ship1.projectile_list:
+            #         p1.move_me()
+            #     if p2 in ship2.projectile_list:
+            #         p2.move_me()
+            #
+            #
+            #     if abs(p1.already_travled.x) >= abs(p1.travel_vec.normalize().x * 300) and abs(
+            #             p1.already_travled.y) >= abs(p1.travel_vec.normalize().y * 300):
+            #
+            #         if p1.parent:
+            #             ship1.projectile_list.remove(p1)
+            #             p1.remove_widget(p1.children[0])
+            #             p1.parent.remove_widget(p1)
+            #
+            #
+            #     if abs(p2.already_travled.x) >= abs(p2.travel_vec.normalize().x * 300) and abs(
+            #             p2.already_travled.y) >= abs(p2.travel_vec.normalize().y * 300):
+            #
+            #         if p2.parent:
+            #             ship2.projectile_list.remove(p2)
+            #             p2.remove_widget(p2.children[0])
+            #             p2.parent.remove_widget(p2)
+
+
+                # if p1.collide_widget(ship2):
+                #     if p1:
+                #         self.root.remove_widget(p1)
+                #         if p1 in ship1.projectile_list:
+                #             ship1.projectile_list.remove(p1)
+                #
+                #     if ship2:
+                #         self.root.remove_widget(ship2)
+                #         if ship2 in self.team2:
+                #             self.team2.remove(ship2)
+                #
+                #     print("team1 au")
+                #
+                # if p2.collide_widget(ship1):
+                #     if p2:
+                #         self.root.remove_widget(p2)
+                #         if p2 in ship2.projectile_list:
+                #             ship2.projectile_list.remove(p2)
+                #
+                #     if ship1:
+                #         self.root.remove_widget(ship1)
+                #         if ship1 in self.team1:
+                #             self.team1.remove(ship1)
+                #     print("team2 au")
+
+        for ship1 in self.team1.copy():
+            ship1.move_me(self.offset)
+
+
+            if not ship1.shooting_sheduled:
+                tar1 = random.choice(self.team2)
+                Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos, self.team1_projectiles), 3)
+                ship1.shooting_sheduled = True
+            #Clock.schedule_once(lambda dt: ship1.toggle_shotting, 1)
+
+        for p1 in self.team1_projectiles.copy():
+
+            if p1 in self.team1_projectiles:
+                p1.move_me()
+
+            for enemy2 in self.team2:
+                if p1.collide_widget(enemy2):
+                    if p1:
+                        self.root.remove_widget(p1)
+                        if p1 in self.team1_projectiles:
+                            self.team1_projectiles.remove(p1)
+
+                    if enemy2:
+                        self.root.remove_widget(enemy2)
+                        if enemy2 in self.team2:
+                            self.team2.remove(enemy2)
+
+
+                if abs(p1.already_travled.x) >= abs(p1.travel_vec.normalize().x * 300) and abs(
+                        p1.already_travled.y) >= abs(p1.travel_vec.normalize().y * 300):
+
+                    if p1.parent:
+                        self.team1_projectiles.remove(p1)
+                        p1.remove_widget(p1.children[0])
+                        p1.parent.remove_widget(p1)
+
+
+        for ship2 in self.team2.copy():
+            ship2.move_me(self.offset)
+
+            if not ship2.shooting_sheduled:
+                tar2 = random.choice(self.team1)
+                Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos, self.team2_projectiles), 3)
+                ship2.shooting_sheduled = True
+            #Clock.schedule_once(lambda dt: ship2.toggle_shotting, 1)
+
+
+        for p2 in self.team2_projectiles.copy():
+
+            if p2 in self.team2_projectiles:
+                p2.move_me()
+
+            for enemy1 in self.team1:
+                if p2.collide_widget(enemy1):
+                    if p2:
+                        self.root.remove_widget(p2)
+                        if p2 in self.team2_projectiles:
+                            self.team2_projectiles.remove(p2)
+
+                    if enemy1:
+                        self.root.remove_widget(enemy1)
+                        if enemy1 in self.team1:
+                            self.team1.remove(enemy1)
+
+            if abs(p2.already_travled.x) >= abs(p2.travel_vec.normalize().x * 300) and abs(
+                    p2.already_travled.y) >= abs(p2.travel_vec.normalize().y * 300):
+
+                if p2.parent:
+                    self.team2_projectiles.remove(p2)
+                    p2.remove_widget(p2.children[0])
+                    p2.parent.remove_widget(p2)
+
+
+
+        #print(len(self.team1))
+        #print(len(self.team2))
+        if len(self.team1) > 1:
+            pass
+            #print(Vector(self.root.ids.ship.pos).distance(Vector(self.team1[0].pos)), self.team1[0].pos)
+
+
+
+
+
+        # for p in self.root.ids.ship.projectile_list:
+        #     p.move_me()
+        #
+        #     if p.collide_widget(self.npc_test):
+        #         print("au au au")
+        #
+        #     if p.collide_widget(self.root.ids.ship):
+        #
+        #         with self.root.ids.background.canvas:
+        #             Color(1, 0, 0, 1, mode='rgba')
+
+
+            # with self.root.ids.background.canvas:
+            #     Color(1, 0, 0, 1, mode='rgba')
+            #     Line(pos=self.root.ids.ship.p1, points=(self.root.ids.ship.p1,self.root.ids.ship.p2,self.root.ids.ship.p3,self.root.ids.ship.p4,self.root.ids.ship.p1), width=1)
+            #
+            #     Rectangle(pos=self.root.ids.ship.pos, size=self.root.ids.ship.size)
+
+
+            #self.root.ids.background.canvas.ask_update()
+            self.root.canvas.ask_update()
 
 
 
@@ -528,27 +699,25 @@ class MainApp(App):
     def start_game(self):
         self.root.ids.score.text = "0"
         self.was_colliding = False
-        self.pipes = []
-        self.npc_test = Ship2((Window.width * 1, Window.height * 0.5),6)
+        #self.pipes = []
+        self.npc_test = Ship2((Window.width * 1, Window.height * 0.5), 6)
         self.root.add_widget(self.npc_test)
 
         self.frames = Clock.schedule_interval(self.next_frame, 1/60.)
 
         Clock.schedule_interval(self.root.ids.background.change_bg_on_time, 1)
 
-
-
-        num_pipes = 5
-        distance_between_pipes = Window.width / (num_pipes - 1)
-        for i in range(num_pipes):
-            pipe = Pipe()
-            pipe.pipe_center = randint(96 + 100, self.root.height - 100)
-            pipe.size_hint = (None, None)
-            pipe.pos = (Window.width + i*distance_between_pipes, 96)
-            pipe.size = (64, self.root.height - 96)
-
-            self.pipes.append(pipe)
-            self.root.add_widget(pipe)
+        # num_pipes = 5
+        # distance_between_pipes = Window.width / (num_pipes - 1)
+        # for i in range(num_pipes):
+        #     pipe = Pipe()
+        #     pipe.pipe_center = randint(96 + 100, self.root.height - 100)
+        #     pipe.size_hint = (None, None)
+        #     pipe.pos = (Window.width + i*distance_between_pipes, 96)
+        #     pipe.size = (64, self.root.height - 96)
+        #
+        #     self.pipes.append(pipe)
+        #     self.root.add_widget(pipe)
 
 
 
@@ -569,34 +738,35 @@ class MainApp(App):
 
     def ship_moveme(self):
         ship = self.root.ids.ship
+        speed = 10
 
         if ship.move_up_boolean:
             if ship.center_y < Window.height:
-                ship.center_y += 1
+                ship.center_y += speed
             else:
-                self.root.ids.background.scroll_bg((0, -1))
-                self.offset.y += 1
+                self.root.ids.background.scroll_bg((0, -speed))
+                self.offset.y += speed
 
         elif ship.move_down_boolean:
             if ship.center_y > 0:
-                ship.center_y -= 1
+                ship.center_y -= speed
             else:
-                self.root.ids.background.scroll_bg((0, 1))
-                self.offset.y -= 1
+                self.root.ids.background.scroll_bg((0, speed))
+                self.offset.y -= speed
 
         if ship.move_left_boolean:
             if ship.center_x > 0:
-                ship.center_x -= 1
+                ship.center_x -= speed
             else:
-                self.root.ids.background.scroll_bg((1, 0))
-                self.offset.x -= 1
+                self.root.ids.background.scroll_bg((speed, 0))
+                self.offset.x -= speed
 
         elif ship.move_right_boolean:
             if ship.center_x < Window.width:
-                ship.center_x += 1
+                ship.center_x += speed
             else:
-                self.root.ids.background.scroll_bg((-1, 0))
-                self.offset.x += 1
+                self.root.ids.background.scroll_bg((-speed, 0))
+                self.offset.x += speed
 
 
 

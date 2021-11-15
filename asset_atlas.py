@@ -152,7 +152,7 @@ ship6_atlas = {
              (0.979, 0.484), (0.903, 0.729), (0.615, 0.752), (0.464, 0.836),
              (0.323, 0.747)]
     ],
-    "shots":["ships/ship6/shot6/shot6_1.png","ships/ship6/shot6/shot6_2.png","ships/ship6/shot6/shot6_3.png","ships/ship6/shot6/shot6_4.png","ships/ship6/shot6/shot6_5.png","shot6/shot6_asset.png"],
+    "shots":["ships/ship6/shot6/shot6_1.png","ships/ship6/shot6/shot6_2.png","ships/ship6/shot6/shot6_3.png","ships/ship6/shot6/shot6_4.png","ships/ship6/shot6/shot6_asset.png"],
     "shots-bounds":[
             [(0.035, 0.566), (0.039, 0.467), (0.52, 0.445), (0.523, 0.574)],
             [(0.207, 0.575), (0.204, 0.468), (0.548, 0.452), (0.561, 0.579)],
