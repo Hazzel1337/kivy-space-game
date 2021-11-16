@@ -1,4 +1,7 @@
+import io
+
 from kivy.app import App
+from kivy.core.image import Image as CoreImage
 from kivy.graphics.context_instructions import Scale, Translate, Color, PushMatrix, Rotate, PopMatrix
 from kivy.graphics.fbo import Fbo
 from kivy.graphics.gl_instructions import ClearColor, ClearBuffers
@@ -58,7 +61,8 @@ class Projectile(Rotabox):
 
         self.animcounter = 0
         self.type = type
-        self.add_widget(Image(source=ships_atlas[type]["shots"][0]))
+        #self.add_widget(Image(source=ships_atlas[type]["shots"][0]))
+        self.add_widget(Image(texture=ships_atlas[type]["shots-memory"][0].texture))
         #print(ships_atlas[type]["shots-bounds"][0])
 
 
@@ -100,9 +104,12 @@ class Projectile(Rotabox):
     def animate_ontime(self, time_passed):
 
         if self.parent:
-            if self.animcounter < len(ships_atlas[self.type]["shots"]) - 1:
+            #if self.animcounter < len(ships_atlas[self.type]["shots"]) - 1:
+            if self.animcounter < len(ships_atlas[self.type]["shots-memory"]) - 1:
+                print(len(ships_atlas[self.type]["shots-memory"]))
                 self.animcounter += 1
-                self.children[0].source = ships_atlas[self.type]["shots"][self.animcounter]
+                self.children[0].texture = ships_atlas[self.type]["shots-memory"][self.animcounter].texture
+                #self.children[0].source = ships_atlas[self.type]["shots"][self.animcounter]
                 self.custom_bounds = [ships_atlas[self.type]["shots-bounds"][self.animcounter]]
 
 
@@ -369,7 +376,8 @@ class Ship2(Rotabox):
         self.projectile_list =[]
         self.type = type
         self.source = ships_atlas[type]["ship"][0]
-        self.add_widget(Image(source=self.source))
+        #self.add_widget(Image(source=self.source))
+        self.add_widget(Image(texture=ships_atlas[type]["ship-memory"][0].texture))
         self.custom_bounds = ships_atlas[type]["ship-bounds"]
         self.allow_stretch = True
         self.size = ("64dp", "64dp")
@@ -461,6 +469,28 @@ class MainApp(App):
         self.team2 = []
         self.team2_projectiles = []
 
+        #load in memory
+        #data = io.BytesIO(open(ships_atlas[2]["ship"][0], "rb").read())
+        #ships_atlas[2]["ship-memory"].append(CoreImage(data, ext="png"))
+        #ships_atlas[2]["ship"][0]
+        ships_atlas[2]["ship-memory"].append(CoreImage(ships_atlas[2]["ship"][0]))
+
+        for pic in ships_atlas[2]["shots"]:
+            #data = io.BytesIO(open(pic, "rb").read())
+            #ships_atlas[2]["shots-memory"].append(CoreImage(data, ext="png"))
+            ships_atlas[2]["shots-memory"].append(CoreImage(pic))
+
+        #data = io.BytesIO(open(ships_atlas[6]["ship"][0], "rb").read())
+        #ships_atlas[6]["ship-memory"].append(CoreImage(data, ext="png"))
+        ships_atlas[6]["ship-memory"].append(CoreImage(ships_atlas[6]["ship"][0]))
+
+        for pic in ships_atlas[6]["shots"]:
+            #data = io.BytesIO(open(pic, "rb").read())
+            #ships_atlas[6]["shots-memory"].append(CoreImage(data, ext="png"))
+            ships_atlas[6]["shots-memory"].append(CoreImage(pic))
+
+
+
 
 
     def check_collision(self):
@@ -510,12 +540,12 @@ class MainApp(App):
         # if len(self.team2) < 10:
         #     self.team2.append(Ship2((0, Window.height * 0.3), randint(4, 6))) #Window.width * 1
         #     self.root.add_widget(self.team2[-1])
-        if len(self.team1) < 10:
+        if len(self.team1) < 3:
             self.team1.append(Ship2((Window.width * 1, Window.height * 0.7), 2))
             self.root.add_widget(self.team1[-1])
             print("added")
 
-        if len(self.team2) < 10:
+        if len(self.team2) < 3:
             self.team2.append(Ship2((Window.width * 1, Window.height * 0.3), 6)) #Window.width * 1
             self.root.add_widget(self.team2[-1])
 
@@ -587,17 +617,17 @@ class MainApp(App):
                 #             self.team1.remove(ship1)
                 #     print("team2 au")
 
-        for ship1 in self.team1.copy():
+        for ship1 in self.team1[:]:
             ship1.move_me(self.offset)
 
 
             if not ship1.shooting_sheduled:
                 tar1 = random.choice(self.team2)
-                Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos, self.team1_projectiles), 3)
+                Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos, self.team1_projectiles), 10)
                 ship1.shooting_sheduled = True
             #Clock.schedule_once(lambda dt: ship1.toggle_shotting, 1)
 
-        for p1 in self.team1_projectiles.copy():
+        for p1 in self.team1_projectiles[:]:
 
             if p1 in self.team1_projectiles:
                 p1.move_me()
@@ -624,17 +654,17 @@ class MainApp(App):
                         p1.parent.remove_widget(p1)
 
 
-        for ship2 in self.team2.copy():
+        for ship2 in self.team2[:]:
             ship2.move_me(self.offset)
 
             if not ship2.shooting_sheduled:
                 tar2 = random.choice(self.team1)
-                Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos, self.team2_projectiles), 3)
+                Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos, self.team2_projectiles), 10)
                 ship2.shooting_sheduled = True
             #Clock.schedule_once(lambda dt: ship2.toggle_shotting, 1)
 
 
-        for p2 in self.team2_projectiles.copy():
+        for p2 in self.team2_projectiles[:]:
 
             if p2 in self.team2_projectiles:
                 p2.move_me()
@@ -703,7 +733,7 @@ class MainApp(App):
         self.npc_test = Ship2((Window.width * 1, Window.height * 0.5), 6)
         self.root.add_widget(self.npc_test)
 
-        self.frames = Clock.schedule_interval(self.next_frame, 1/60.)
+        self.frames = Clock.schedule_interval(self.next_frame, 1/30.)
 
         Clock.schedule_interval(self.root.ids.background.change_bg_on_time, 1)
 

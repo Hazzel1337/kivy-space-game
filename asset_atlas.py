@@ -47,6 +47,7 @@ ship2_atlas = {
              (0.32, 0.406)],
             [(0.437, 0.639), (0.435, 0.363), (0.648, 0.363), (0.645, 0.631)]
     ],
+    "ship-memory":[],
     "shots":["ships/ship2/shot2/shot2_1.png","ships/ship2/shot2/shot2_2.png","ships/ship2/shot2/shot2_3.png","ships/ship2/shot2/shot2_4.png","ships/ship2/shot2/shot2_5.png","ships/ship2/shot2/shot2_6.png","ships/ship2/shot2/shot2_asset.png"],
     "shots-bounds":[
 
@@ -59,6 +60,7 @@ ship2_atlas = {
             [(0.437, 0.639), (0.435, 0.363), (0.648, 0.363), (0.645, 0.631)]
 
     ],
+    "shots-memory": [],
     "expl": ["ships/ship2/shot2/shot2_exp1.png","ships/ship2/shot2/shot2_exp2.png","ships/ship2/shot2/shot2_exp3.png","ships/ship2/shot2/shot2_exp4.png","ships/ship2/shot2/shot2_exp5.png"],
     "exh-normal":["ships/ship2/Normal_flight/Exhaust1/exhaust1.png","ships/ship2/Normal_flight/Exhaust1/exhaust2.png","ships/ship2/Normal_flight/Exhaust1/exhaust3.png","ships/ship2/Normal_flight/Exhaust1/exhaust4.png"],
     "exh-tubro":["ships/ship2/Turbo_flight/Exhaust1/exhaust1.png","ships/ship2/Turbo_flight/Exhaust1/exhaust2.png","ships/ship2/Turbo_flight/Exhaust1/exhaust3.png","ships/ship2/Turbo_flight/Exhaust1/exhaust4.png"]
@@ -152,6 +154,7 @@ ship6_atlas = {
              (0.979, 0.484), (0.903, 0.729), (0.615, 0.752), (0.464, 0.836),
              (0.323, 0.747)]
     ],
+    "ship-memory":[],
     "shots":["ships/ship6/shot6/shot6_1.png","ships/ship6/shot6/shot6_2.png","ships/ship6/shot6/shot6_3.png","ships/ship6/shot6/shot6_4.png","ships/ship6/shot6/shot6_asset.png"],
     "shots-bounds":[
             [(0.035, 0.566), (0.039, 0.467), (0.52, 0.445), (0.523, 0.574)],
@@ -160,6 +163,7 @@ ship6_atlas = {
             [(0.438, 0.579), (0.42, 0.458), (0.57, 0.444), (0.595, 0.586)],
             [(0.471, 0.579), (0.472, 0.468), (0.582, 0.457), (0.581, 0.578)]
     ],
+    "shots-memory":[],
     "expl": ["ships/ship6/shot6/shot6_exp1.png","ships/ship6/shot6/shot6_exp2.png","ships/ship6/shot6/shot6_exp3.png","ships/ship6/shot6/shot6_exp4.png","ships/ship6/shot6/shot6_exp5.png","ships/ship6/shot6/shot6_exp6.png","ships/ship6/shot6/shot6_exp7.png","ships/ship6/shot6/shot6_exp8.png","ships/ship6/shot6/shot6_exp9.png","ships/ship6/shot6/shot6_exp10.png"],
     "exh-normal":["ships/ship6/Normal_flight/Exhaust1/exhaust1.png","ships/ship6/Normal_flight/Exhaust1/exhaust2.png","ships/ship6/Normal_flight/Exhaust1/exhaust3.png","ships/ship6/Normal_flight/Exhaust1/exhaust4.png"],
     "exh-tubro":["ships/ship6/Turbo_flight/Exhaust1/exhaust1.png","ships/ship6/Turbo_flight/Exhaust1/exhaust2.png","ships/ship6/Turbo_flight/Exhaust1/exhaust3.png","ships/ship6/Turbo_flight/Exhaust1/exhaust4.png"]
