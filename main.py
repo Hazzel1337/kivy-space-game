@@ -1,5 +1,10 @@
-import io
+max_fps = 60
+speed_multi = 2
+from kivy.config import Config
 
+#Config.set('graphics', 'maxfps', str(max_fps))
+
+import io
 from kivy.app import App
 from kivy.core.image import Image as CoreImage
 from kivy.graphics.context_instructions import Scale, Translate, Color, PushMatrix, Rotate, PopMatrix
@@ -23,6 +28,8 @@ from kivy.properties import NumericProperty
 from kivy.vector import Vector
 from asset_atlas import ships_atlas
 from rotabox import Rotabox
+
+
 
 
 
@@ -92,8 +99,8 @@ class Projectile(Rotabox):
 
     def move_me(self):
         if self.parent:
-            self.pos = Vector(self.pos) + self.travel_vec.normalize()
-            self.already_travled += self.travel_vec.normalize()
+            self.pos = Vector(self.pos) + (self.travel_vec.normalize() *(speed_multi + 1.5))
+            self.already_travled += self.travel_vec.normalize() *(speed_multi + 1.5)
         # if abs(self.already_travled.x) >= abs(self.travel_vec.normalize().x * 300) and abs(self.already_travled.y) >= abs(self.travel_vec.normalize().y * 300):
         #
         #     if self.parent:
@@ -106,7 +113,6 @@ class Projectile(Rotabox):
         if self.parent:
             #if self.animcounter < len(ships_atlas[self.type]["shots"]) - 1:
             if self.animcounter < len(ships_atlas[self.type]["shots-memory"]) - 1:
-                print(len(ships_atlas[self.type]["shots-memory"]))
                 self.animcounter += 1
                 self.children[0].texture = ships_atlas[self.type]["shots-memory"][self.animcounter].texture
                 #self.children[0].source = ships_atlas[self.type]["shots"][self.animcounter]
@@ -404,8 +410,8 @@ class Ship2(Rotabox):
             Clock.schedule_interval(list_[-1].animate_ontime, 0.5)
 
     def move_me(self, offset):
-        self.original_pos = Vector(self.original_pos) + self.travel_vec.normalize()
-        self.already_travled += self.travel_vec.normalize()
+        self.original_pos = Vector(self.original_pos) + (self.travel_vec.normalize() * speed_multi)
+        self.already_travled += self.travel_vec.normalize() * speed_multi
         if abs(self.already_travled.x) >= abs(self.travel_vec.x) and abs(self.already_travled.y) >= abs(self.travel_vec.y):
             self.travel_vec = Vector(self.new_destination()) - Vector(self.original_pos)
             self.already_travled = Vector(0, 0)
@@ -460,6 +466,8 @@ class MainApp(App):
     pipes = []
     GRAVITY = 300
     was_colliding = False
+    Clock.max_iteration = 60
+    Clock.timeout = 0
 
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
@@ -468,6 +476,9 @@ class MainApp(App):
         self.team1_projectiles = []
         self.team2 = []
         self.team2_projectiles = []
+        self.projectile_lifetime = 1000
+
+
 
         #load in memory
         #data = io.BytesIO(open(ships_atlas[2]["ship"][0], "rb").read())
@@ -527,7 +538,7 @@ class MainApp(App):
         #self.move_pipes(time_passed)
         #self.root.ids.background.scroll_textures(time_passed)
         self.ship_moveme()
-
+        print(str(Clock.get_fps()))
         self.npc_test.move_me(self.offset)
         #print(self.npc_test.pos, self.npc_test.original_pos)
         #print(Vector(self.root.ids.ship.pos).distance(Vector(self.npc_test.pos)),self.offset)
@@ -540,12 +551,12 @@ class MainApp(App):
         # if len(self.team2) < 10:
         #     self.team2.append(Ship2((0, Window.height * 0.3), randint(4, 6))) #Window.width * 1
         #     self.root.add_widget(self.team2[-1])
-        if len(self.team1) < 3:
+        if len(self.team1) < 10:
             self.team1.append(Ship2((Window.width * 1, Window.height * 0.7), 2))
             self.root.add_widget(self.team1[-1])
-            print("added")
 
-        if len(self.team2) < 3:
+
+        if len(self.team2) < 10:
             self.team2.append(Ship2((Window.width * 1, Window.height * 0.3), 6)) #Window.width * 1
             self.root.add_widget(self.team2[-1])
 
@@ -623,7 +634,7 @@ class MainApp(App):
 
             if not ship1.shooting_sheduled:
                 tar1 = random.choice(self.team2)
-                Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos, self.team1_projectiles), 10)
+                Clock.schedule_interval(lambda dt: ship1.shoot_target(tar1.pos, self.team1_projectiles), 3)
                 ship1.shooting_sheduled = True
             #Clock.schedule_once(lambda dt: ship1.toggle_shotting, 1)
 
@@ -645,8 +656,8 @@ class MainApp(App):
                             self.team2.remove(enemy2)
 
 
-                if abs(p1.already_travled.x) >= abs(p1.travel_vec.normalize().x * 300) and abs(
-                        p1.already_travled.y) >= abs(p1.travel_vec.normalize().y * 300):
+                if abs(p1.already_travled.x) >= abs(p1.travel_vec.normalize().x * self.projectile_lifetime) and abs(
+                        p1.already_travled.y) >= abs(p1.travel_vec.normalize().y * self.projectile_lifetime):
 
                     if p1.parent:
                         self.team1_projectiles.remove(p1)
@@ -659,7 +670,7 @@ class MainApp(App):
 
             if not ship2.shooting_sheduled:
                 tar2 = random.choice(self.team1)
-                Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos, self.team2_projectiles), 10)
+                Clock.schedule_interval(lambda dt: ship2.shoot_target(tar2.pos, self.team2_projectiles), 3)
                 ship2.shooting_sheduled = True
             #Clock.schedule_once(lambda dt: ship2.toggle_shotting, 1)
 
@@ -673,6 +684,7 @@ class MainApp(App):
                 if p2.collide_widget(enemy1):
                     if p2:
                         self.root.remove_widget(p2)
+
                         if p2 in self.team2_projectiles:
                             self.team2_projectiles.remove(p2)
 
@@ -681,8 +693,8 @@ class MainApp(App):
                         if enemy1 in self.team1:
                             self.team1.remove(enemy1)
 
-            if abs(p2.already_travled.x) >= abs(p2.travel_vec.normalize().x * 300) and abs(
-                    p2.already_travled.y) >= abs(p2.travel_vec.normalize().y * 300):
+            if abs(p2.already_travled.x) >= abs(p2.travel_vec.normalize().x * self.projectile_lifetime) and abs(
+                    p2.already_travled.y) >= abs(p2.travel_vec.normalize().y * self.projectile_lifetime):
 
                 if p2.parent:
                     self.team2_projectiles.remove(p2)
@@ -733,7 +745,7 @@ class MainApp(App):
         self.npc_test = Ship2((Window.width * 1, Window.height * 0.5), 6)
         self.root.add_widget(self.npc_test)
 
-        self.frames = Clock.schedule_interval(self.next_frame, 1/30.)
+        self.frames = Clock.schedule_interval(self.next_frame, 1/max_fps)
 
         Clock.schedule_interval(self.root.ids.background.change_bg_on_time, 1)
 
@@ -797,6 +809,10 @@ class MainApp(App):
             else:
                 self.root.ids.background.scroll_bg((-speed, 0))
                 self.offset.x += speed
+
+    def get_fps(self):
+
+        return str(Clock.get_fps())
 
 
 
