@@ -1,5 +1,8 @@
+import os
+
 max_fps = 60
 speed_multi = 2
+PATH = os.path.dirname(os.path.abspath(__file__))
 from kivy.config import Config
 
 #Config.set('graphics', 'maxfps', str(max_fps))
@@ -480,10 +483,7 @@ class MainApp(App):
 
 
 
-        #load in memory
-        #data = io.BytesIO(open(ships_atlas[2]["ship"][0], "rb").read())
-        #ships_atlas[2]["ship-memory"].append(CoreImage(data, ext="png"))
-        #ships_atlas[2]["ship"][0]
+
         ships_atlas[2]["ship-memory"].append(CoreImage(ships_atlas[2]["ship"][0]))
 
         for pic in ships_atlas[2]["shots"]:
