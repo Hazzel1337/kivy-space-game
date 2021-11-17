@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="616daa74-66c6-4e61-b812-69913ba5428a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="616daa74-66c6-4e61-b812-69913ba5428a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637162337328</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lowercase foldername/filenames">
+      <created>1637175049147</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637175049147</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +253,8 @@
     <MESSAGE value="current stuff" />
     <MESSAGE value="removed comments" />
     <MESSAGE value="absolute paths" />
-    <option name="LAST_COMMIT_MESSAGE" value="absolute paths" />
+    <MESSAGE value="lowercase foldername/filenames" />
+    <option name="LAST_COMMIT_MESSAGE" value="lowercase foldername/filenames" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
